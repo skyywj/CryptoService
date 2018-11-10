@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>HrPros</groupId>
-    <artifactId>Demo</artifactId>
+    <groupId>crypto-service</groupId>
+    <artifactId>Crypto-Tool</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
 
     <name>HrPros</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Dubbo project for RSA crypto</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -22,22 +23,10 @@
     <properties>
         <spring.boot.version>2.0.4.RELEASE</spring.boot.version>
         <smartisan-common.version>0.26-SNAPSHOT</smartisan-common.version>
-        <grpc-jersey.version>0.3.2</grpc-jersey.version>
-        <grpc.version>1.10.0</grpc.version>
-        <netty.version>4.1.22.Final</netty.version>
+        <service-api.version>0.0.52</service-api.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -45,85 +34,28 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
-        <!--本地proto项目依赖-->
-        <dependency>
-            <groupId>test-proto</groupId>
-            <artifactId>protodemo</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <!--Grpc依赖包-->
-        <dependency>
-            <groupId>org.lognet</groupId>
-            <artifactId>grpc-spring-boot-starter</artifactId>
-            <version>2.2.0</version>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.xorlev.grpc-jersey</groupId>
-            <artifactId>jersey-rpc-support</artifactId>
-            <version>${grpc-jersey.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
-            <version>${grpc.version}</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.6.4</version>
         </dependency>
         <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc.version}</version>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>2.12.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.google.api.grpc</groupId>
-            <artifactId>proto-google-common-protos</artifactId>
-            <version>1.10.0</version>
-        </dependency>
-
-        <!--logback依赖-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-
-        <!--dubbo依賴包-->
-        <dependency>
-            <groupId>io.dubbo.springboot</groupId>
-            <artifactId>spring-boot-starter-dubbo</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>26.0-jre</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
-        <dependency>
-            <groupId>org.hibernate.common</groupId>
-            <artifactId>hibernate-commons-annotations</artifactId>
-            <version>5.0.4.Final</version>
-        </dependency>
-
         <!--dubbo服务API-->
         <dependency>
             <groupId>HrPros</groupId>
             <artifactId>service-api</artifactId>
             <version>0.0.10</version>
         </dependency>
-
     </dependencies>
 
 </project>
